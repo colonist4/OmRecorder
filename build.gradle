@@ -2,21 +2,38 @@
 
 buildscript {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
     dependencies {
-      classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        // classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        // classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+plugins {
+    id 'maven-publish'
+}
+
 allprojects {
     repositories {
-        jcenter()
-        maven { url 'https://dl.bintray.com/kailash09dabhi/maven' }
+        google()
+        mavenCentral()
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.kailashdabhi'
+            artifactId = 'om-recorder'
+            version = '1.1.5'
+
+            // from components.java
+        }
     }
 }
 
