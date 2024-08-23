@@ -28,11 +28,14 @@ allprojects {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.kailashdabhi'
-            artifactId = 'om-recorder'
-            version = '1.1.5'
+            groupId = "com.github.colonist4"
+            artifactId = "OmRecorder"
+            version = "1.1.5"
 
-            // from components.java
+            pom {
+                name.set("name")
+                description.set("description")
+            }
         }
     }
 }
